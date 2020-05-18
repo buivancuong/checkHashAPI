@@ -1,12 +1,17 @@
-import subprocess
+key_list = list()
 
-cmd = './bf_client check 6d5b0d4b5b459ff3f68a58f3bfad3707'
+with open('keys.txt') as keys_file:
+    key = keys_file.readline()
+    while key:
+        key = key.rstrip('\n')
+        key_list.append(key)
+        key = keys_file.readline()
 
-result = subprocess.check_output(cmd, shell=True)
+print(key_list)
 
-import re
+exist_key = False
+for i in key_list:
+    if (i == '4631-af6d-469f-0cf5'):
+        exist_key = True
 
-nonexist = re.search('not.*', str(result))
-
-if nonexist: print("nonexistant")
-else: print("exist")
+if not exist_key: print('deo co')
