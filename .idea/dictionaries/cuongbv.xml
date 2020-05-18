@@ -2,6 +2,7 @@
   <dictionary name="cuongbv">
     <words>
       <w>malware</w>
+      <w>stringstream</w>
     </words>
   </dictionary>
 </component>

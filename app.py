@@ -48,7 +48,7 @@ def check_hash():
     nonexistant = re.search('no.*', str(result_command))
 
     if nonexistant: return jsonify({"Message": "nonexistant"})
-    else: return jsonify({"Message": "exist"})
+    else: return jsonify({"Malware": str(result_command)})
 
 
 #if __name__ == '__main__':
