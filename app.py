@@ -5,19 +5,13 @@ import os
 import subprocess
 import re
 
+import logging
+logging.basicConfig(filename='app.log', filemode='w', level=logging.WARNING,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def index():
-    return 'Flask is running!'
-
-
-@app.route('/data')
-def names():
-    data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
-    return jsonify(data)
 
 @app.route('/api/v1/check_hash')
 # GET /api/v1/check_hash?hash=blahblahblah
