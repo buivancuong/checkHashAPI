@@ -1,17 +1,9 @@
-key_list = list()
+x = '6d5b'
 
-with open('keys.txt') as keys_file:
-    key = keys_file.readline()
-    while key:
-        key = key.rstrip('\n')
-        key_list.append(key)
-        key = keys_file.readline()
-
-print(key_list)
-
-exist_key = False
-for i in key_list:
-    if (i == '4631-af6d-469f-0cf5'):
-        exist_key = True
-
-if not exist_key: print('deo co')
+for i in x:
+    try:
+        int('0x' + i, 16)
+    except ValueError as err:
+        print("Error!")
+        print(err)
+        print("End of Error!")
